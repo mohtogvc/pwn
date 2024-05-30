@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions Website</title>
+  <link rel="stylesheet" href="q1.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <div class="container">
+    <div class="center">
+      <div class="question">
+        <h2>اخر سؤال ي عيال هل هاذا الشخص مخنث ؟</h2>
+        <form id="questionForm">
+          <div class="answer-options">
+            <input type="radio" id="optionA" name="answer" value="a">
+            <label for="optionA">a. prd8a</label><br>
+            <input type="radio" id="optionB" name="answer" value="b">
+            <label for="optionB">b. M2</label><br>
+            <input type="radio" id="optionC" name="answer" value="c">
+            <label for="optionC">c. Fa7</label><br>
+            <input type="radio" id="optionD" name="answer" value="d">
+            <label for="optionD">d. Mohand</label><br>
+          </div>
+          <input type="submit" value="Submit" id="submitBtn" style="margin-left: auto;">
+        </form>
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+  
+  <audio id="errorSound1" src="error.mp3"></audio>
+  <audio id="errorSound2" src="1.mp3"></audio> <!-- Include the audio files -->
+  <div class="notification" id="notification">Incorrect answer! Please try again.</div>
+  <script>
+    document.getElementById('questionForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      
+      var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+      if (selectedAnswer) {
+        var answerValue = selectedAnswer.value;
+        if (answerValue === 'a') { // Assuming 'b' is the correct answer
+          window.location.href = 'winner.html'; // Redirect to winner.html
+        } else {
+          document.getElementById('result').innerHTML = 'Incorrect answer! Please try again.';
+          document.getElementById('notification').classList.add('show');
+          setTimeout(function() {
+            document.getElementById('notification').classList.remove('show');
+          }, 3000); // Show notification for 3 seconds
+        }
+      } else {
+        document.getElementById('result').innerHTML = 'Please select an answer.';
+      }
+    });
+  </script>
+</body>
+</html>

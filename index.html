@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troll Website Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Choose Your Character</h1>
+        <div class="options">
+            <div class="option" onclick="chooseTroll('Mohand')">
+                <img src="operator.png" alt=" Troll">
+                <div class="option-name">Mohand</div>
+            </div>
+            <div class="option" onclick="chooseTroll('FA7')">
+                <img src="harmless.png" alt=" Troll">
+                <div class="option-name">FA7</div>
+            </div>
+            <div class="option" onclick="chooseTroll('Sylx')">
+                <img src="nov.png" alt=" Troll">
+                <div class="option-name">Sylx</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notify" id="notify">You can now try!</div>
+
+    <script>
+        function chooseTroll(troll) {
+            if (troll === 'FA7' || troll === 'Mohand' || troll === 'Sylx') {
+                                window.location.href = 'starttoplay.html'; // Redirect to prd8a.html
+            }
+            // Add more conditions for other trolls if needed
+        }
+    </script>
+</body>
+
+</html>

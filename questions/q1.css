@@ -1,0 +1,86 @@
+body {
+    background-color: #1E1F29;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.center {
+    width: 100%;
+    max-width: 800px;
+}
+
+.question {
+    background-color: #12131C;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+.notification {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 5px;
+    animation: fadeInOut 2s ease-out; /* Animation for fade in/out */
+}
+
+.correct {
+    background-color: #4CAF50; /* Green background for correct answer */
+    color: white;
+}
+
+.incorrect {
+    background-color: #f44336; /* Red background for incorrect answer */
+    color: white;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#submitBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    margin-left: auto; /* Move the button to the right */
+}
+
+#submitBtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+#result {
+    margin-top: 10px;
+    color: yellow;
+}

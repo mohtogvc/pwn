@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner Site</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .winner-section {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        .winner-section button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #000000;
+            color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="winner-section">
+        <button id="playVideo">Press</button>
+        <video id="winnerVideo" autoplay controls style="display: none;">
+            <source src="trol2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <script>
+        document.getElementById('playVideo').addEventListener('click', function() {
+            var videoElement = document.getElementById('winnerVideo');
+            videoElement.style.display = 'block';
+            videoElement.play();
+            document.body.style.overflow = 'visible'; // Allow scrolling after video starts
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F11') {
+                    e.preventDefault();
+                }
+            });
+            // Go full screen
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+            } else if (videoElement.webkitRequestFullscreen) {
+                videoElement.webkitRequestFullscreen();
+            } else if (videoElement.mozRequestFullScreen) {
+                videoElement.mozRequestFullScreen();
+            } else if (videoElement.msRequestFullscreen) {
+                videoElement.msRequestFullscreen();
+            }
+        });
+
+
+
+</script>
+
+
+<script>
+
+setTimeout(function() {
+                window.location.href = '/question2/finish.html';
+            }, 13000); // 13 seconds in milliseconds
+</script>
+</body>
+</html>

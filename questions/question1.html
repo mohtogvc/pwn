@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions Website</title>
+  <link rel="stylesheet" href="q1.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <div class="container">
+    <div class="center">
+      <div class="question">
+        <h2>هل هاذا الشخص كلب مال ؟</h2>
+        <form id="questionForm">
+          <div class="answer-options">
+            <input type="radio" id="optionA" name="answer" value="a">
+            <label for="optionA">a. M2</label><br>
+            <input type="radio" id="optionB" name="answer" value="b">
+            <label for="optionB">b. prd8a</label><br>
+            <input type="radio" id="optionC" name="answer" value="c">
+            <label for="optionC">c. Fa7</label><br>
+            <input type="radio" id="optionD" name="answer" value="d">
+            <label for="optionD">d. Mohand</label><br>
+          </div>
+          <input type="submit" value="Submit" id="submitBtn" style="margin-left: auto;">
+        </form>
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+  
+  <audio id="errorSound1" src="error.mp3"></audio>
+  <audio id="errorSound2" src="1.mp3"></audio> <!-- Include the audio files -->
+  <div class="notification" id="notification">Incorrect answer! Please try again.</div>
+  <script src="script.js"></script> <!-- Include the JavaScript file -->
+</body>
+</html>
